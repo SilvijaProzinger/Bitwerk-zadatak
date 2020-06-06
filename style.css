@@ -2,7 +2,6 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    //overflow-x: hidden;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
@@ -10,19 +9,21 @@ html, body {
 .container {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 	justify-content: space-between;
 }
 
 .main-content {
 	margin: 5%;
-	position: relative;
+	display: table-cell;
+	width: 500px;
+	height: 500px;
+	vertical-align: middle;
+	text-align: center;
 }
 
 .form-content {
-	position: absolute;
-	top: 15%;
-	left: 50%;
+	display: inline-block;
+	text-align: left;
 }
 
 input {
@@ -63,9 +64,15 @@ input:hover {
   	margin-right: 0;
 }
 
-@media only screen and (max-width: 830px){
+@media only screen and (max-width: 1000px){
 	.container {
 		display: block;
+	}
+	
+	.main-content {
+		display: block;
+		width: auto;
+		height: auto;
 	}
 
 	.form-content {
