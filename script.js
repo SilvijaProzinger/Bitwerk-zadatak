@@ -18,10 +18,10 @@ form.addEventListener('submit', function(event){
 	let emailValue = document.forms['form']['email'].value
 
 	//check if any of the input fields is empty
-	if (nameValue === '' || surnameValue === '' || emailValue === ''){
+	if (nameValue === '' || surnameValue === '' || emailValue === '' || !listOfFiles.length){
 		alert('Please fill all required fields!')
+		event.preventDefault()
 	} else {
-		//event.preventDefault()
 		listOfFiles.forEach(function(file){
 			sendFile(file)
 		})
